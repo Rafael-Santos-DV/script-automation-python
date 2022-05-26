@@ -6,6 +6,7 @@ def InformationOfAnime() -> dict[str, any]:
 
     server: str = input("Your server url of anime: ").strip();
     anime: str = input("Give the name of the anime: ").strip();
+    episodePoster: str = input("Your server url of episode poster: ").strip();
     likes: float = float(input("Feedback of anime: ").strip());
     poster: str = input("Poster URL: ").strip();
     episodes: int = int(input("Number of episodes: "));
@@ -24,10 +25,10 @@ def InformationOfAnime() -> dict[str, any]:
     print("Await...");
     sleep(1);
 
-    for c in range(1, episodes+1):
+    for c in range(0, episodes):
         episodesList.append({
-            "title": f"episodio {c}",
-            "url": f"{server}/{f'0{c}' if(len(str(c)) < 2) else c}.mp4"
+            "title": f"episodio {c+1}",
+            "url": f"{server}/{f'0{c+1}' if(len(str(c+1)) < 2) else c+1}.mp4"
         });
 
     print("generate with sucess!");
@@ -35,10 +36,11 @@ def InformationOfAnime() -> dict[str, any]:
     return {
         "anime": anime,
         "likes": likes,
-        "poster": poster,
+        "poster": "https://image.tmdb.org/t/p/original"+poster,
         "quant": episodes,
         "description": description,
         "ano": year,
         "gender": gender,
-        "episodes": episodesList
+        "episodes": episodesList,
+        "episodePoster": "https://image.tmdb.org/t/p/original"+episodePoster
     };

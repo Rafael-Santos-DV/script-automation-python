@@ -23,4 +23,4 @@ while init:
 
 # Routes.get('/showAnimes', ControllersCrudAnimes.GetShowAnimes);
 # Routes.get('/showAnime/:animeId', ControllersCrudAnimes.GetShowAnime);
-# Routes.post('/createNewAnime', ControllersCrudAnimes.CreateNewAnimeData);
+# Routes.post('/createNewAnime', ControllersCrudAnimes.CreateNewAnimeData); 
